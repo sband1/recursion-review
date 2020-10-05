@@ -4,7 +4,18 @@
 // };
 
 // But instead we're going to implement it from scratch:
-var getElementsByClassName = function(className
-) {
-  // your code here
+// inputs: target class name, string version
+// output: an array of elements that have the target class name
+var getElementsByClassName = function(className) {
+  var result = [];
+  var hasTargetClass = function(element) {
+    // if input element contains targetClassName
+    //   push the element into the result array
+    // iterate over the input element's children
+    //   run each child thru hasTargetClass
+  };
+  hasTargetClass(document.body);
+  return result;
 };
+
+
