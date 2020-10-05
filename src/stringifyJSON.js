@@ -11,11 +11,15 @@ var stringifyJSON = function(input) {
   if ( typeof input === 'undefined' || typeof input === 'function' ) { return; }
   if ( input === null ) { return `"${input}"`; }
 
-  // if array
-  //   create empty array var
-  //   iterate through input array
-  //     arr.push (recursion(input))
-  //   return join the array with commas and surrond by brackets
+  if (Array.isArray(input)) {
+    var result = [];
+
+    for ( var i = 0; i < input.length; i++ ) {
+      result.push(stringifyJSON(input[i]));
+    }
+
+    return '[' + result.join(',') + ']';
+  }
 
   // if obj
   //   create empty array var
