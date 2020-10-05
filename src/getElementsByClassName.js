@@ -8,11 +8,16 @@
 // output: an array of elements that have the target class name
 var getElementsByClassName = function(className) {
   var result = [];
+
   var hasTargetClass = function(element) {
-    // if input element contains targetClassName
-    //   push the element into the result array
-    // iterate over the input element's children
-    //   run each child thru hasTargetClass
+    if ( element.classList !== undefined && element.classList.contains(className) ) {
+      result.push(element);
+    }
+
+    for ( var i = 0; i < element.childNodes.length; i++ ) {
+      hasTargetClass(element.childNodes[i]);
+    }
+
   };
   hasTargetClass(document.body);
   return result;
