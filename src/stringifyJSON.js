@@ -5,23 +5,32 @@
 // input: string, number, boolean, obj, array, func, null, undefined
 // output: '"string"', "9", "true", "{}", "[]"
 var stringifyJSON = function(input) {
-  // If this is string
-  // return double quoted string
-// if number
+// If this is string
+// return double quoted string
+  if (typeof input === 'string') { return `"${input}"`; }
+  // if number
   // return string number
-// if boolean
+  // if boolean
   // return string version
-// if nulll
+  // if nulll
   // return string null
-// if undefined
+  // if undefined
+  // return
+  // if func
   // return
 
   // if array
-  // create empty array var
-  // iterate through input
-  // empty arr.push (recursion(input))
-  // return Join the array with commas and surrond by brackets
+  //   create empty array var
+  //   iterate through input array
+  //     arr.push (recursion(input))
+  //   return join the array with commas and surrond by brackets
+
   // if obj
-  // return string obj
+  //   create empty array var
+  //   iterate through the input obj
+  //      if recursion(obj[key]) is undefined
+  //        continue
+  //      arr.push recursion(key) concat ":" concat recursion(obj[key])
+  //   return join the array with commas and surrond by curly braces
 
 };
