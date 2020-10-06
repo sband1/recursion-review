@@ -11,8 +11,9 @@ var stringifyJSON = function(input) {
   if ( typeof input === 'undefined' || typeof input === 'function' ) { return; }
   if ( input === null ) { return `${input}`; }
 
+  var result = [];
+
   if ( Array.isArray(input) ) {
-    var result = [];
 
     for ( var i = 0; i < input.length; i++ ) {
       result.push(stringifyJSON(input[i]));
@@ -22,7 +23,6 @@ var stringifyJSON = function(input) {
   }
 
   if ( typeof input === 'object' ) {
-    var result = [];
 
     for ( var key in input ) {
       if ( stringifyJSON(input[key] ) === undefined) { continue; }
